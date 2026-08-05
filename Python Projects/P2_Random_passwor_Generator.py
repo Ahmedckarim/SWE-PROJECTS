@@ -22,6 +22,7 @@ def generate_password():
     if length < 4:
         print(" Password length must be at least 4 charecters.")
         return
+    
     lower = string.ascii_lowercase
     uppercase = string.ascii_uppercase if include_uppercase == "yes" else ""
     special = string.punctuation if include_special == "yes" else ""
@@ -43,10 +44,10 @@ def generate_password():
         character = random.choice(all_characters)
         password.append(character)
 
-        random.shuffle(password)
-        str_password = "".join(password)
-        return str_password
-    
+    random.shuffle(password)
 
+    str_password = "".join(password)
+    return str_password
 
-generate_password()
+password = generate_password()
+print(password)
