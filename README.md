@@ -1,2 +1,2 @@
 # SWE-PROJECTS
-Building Projects to become Softwere engineer
+Building Projects until I  become full Softwere engineer
