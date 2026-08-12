@@ -77,7 +77,7 @@ The objective is:
   * [✔️] Sets
   * [✔️] Dictionaries
   * [✔️] Strings
-  * [] File Handling
+  * [ ] File Handling
   * [ ] JSON
   * [ ] CSV
   * [✔️] Exception Handling
