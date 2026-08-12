@@ -67,20 +67,20 @@ The objective is:
 
 * [ ] Python Fundamentals
 
-  * [ ] Variables & Data Types
-  * [ ] Operators
-  * [ ] Conditional Statements
-  * [ ] Loops
-  * [ ] Functions
-  * [ ] Lists
-  * [ ] Tuples
-  * [ ] Sets
-  * [ ] Dictionaries
-  * [ ] Strings
-  * [ ] File Handling
+  * [✔️] Variables & Data Types
+  * [✔️] Operators
+  * [✔️] Conditional Statements
+  * [✔️] Loops
+  * [✔️] Functions
+  * [✔️] Lists
+  * [✔️] Tuples
+  * [✔️] Sets
+  * [✔️] Dictionaries
+  * [✔️] Strings
+  * [] File Handling
   * [ ] JSON
   * [ ] CSV
-  * [ ] Exception Handling
+  * [✔️] Exception Handling
   * [ ] Modules & Packages
   * [ ] Virtual Environments
   * [ ] Object-Oriented Programming
@@ -93,10 +93,10 @@ The objective is:
 
 ## Phase 2 — Git & GitHub
 
-* [ ] Understand Git
-* [ ] Understand GitHub
+* [✔️] Understand Git
+* [✔️] Understand GitHub
 * [ ] Repository management
-* [ ] Commits
+* [✔️] Commits
 * [ ] Branches
 * [ ] Merging
 * [ ] Pull Requests
