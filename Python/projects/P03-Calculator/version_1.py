@@ -11,9 +11,9 @@
 #  Display the result.✔️
 #  Return to the menu after each calculation.✔️
 #  Allow the user to exit the program.✔️
-Result = 0
-def Menu():
-    print("Calculator program")
+
+def menu():
+    print("=== Calculator program ===")
     print("1.Addition")
     print("2.Subtraction")
     print("3.Multiplication")
@@ -23,11 +23,11 @@ def Menu():
 def addition():
     print(" Enter numbers you want to add them.")
     try:
-        Number1 = int(input("Number one: "))
-        Number2 = int(input("Number Two: "))
+        number_1 = int(input("Number one: "))
+        number_2 = int(input("Number Two: "))
 
-        Result =  Number1 + Number2
-        print(f"Result: {Result}")
+        result =  number_1 + number_2
+        print(f"Result: {result}")
     except ValueError:
         print("Please Inter valid numbers")
 
@@ -35,33 +35,34 @@ def addition():
 def subtraction():
     print(" Enter numbers you want to subtract them.")
     try:
-        Number1 = int(input("Number one: "))
-        Number2 = int(input("Number Two: "))
+        number_1 = int(input("Number one: "))
+        number_2 = int(input("Number Two: "))
 
-        Result =  Number1 - Number2
-        print(f"Result: {Result}")
+        result =  number_1 - number_2
+        print(f"Result: {result}")
     except ValueError:
         print("Please Inter valid numbers")
 
-def Multiplication():
+
+def multiplication():
     print(" Enter numbers you want to multiply them.")
     try:
-        Number1 = int(input("Number one: "))
-        Number2 = int(input("Number Two: "))
+        number_1 = int(input("Number one: "))
+        number_2 = int(input("Number Two: "))
 
-        Result =  Number1 * Number2
-        print(f"Result: {Result}")
+        result =  number_1 * number_2
+        print(f"Result: {result}")
     except ValueError:
         print("Please Inter valid numbers")
 
-def Division():
-    print(" Enter numbers you want to add them.")
+def division():
+    print(" Enter numbers you want to devide them.")
     try:
-        Number1 = int(input("Number one: "))
-        Number2 = int(input("Number Two: "))
+        number_1 = int(input("Number one: "))
+        number_2 = int(input("Number Two: "))
 
-        Result =  Number1 / Number2
-        print(f"Result: {Result}")
+        result =  number_1 / number_2
+        print(f"Result: {result}")
     except ValueError:
             print("Please Inter valid numbers")
     except ZeroDivisionError:
@@ -70,7 +71,7 @@ def Division():
 
 def main():
     while True:
-        Menu()
+        menu()
         operation = input("Enter your Operation: ")
 
         if operation == "1":
@@ -80,10 +81,10 @@ def main():
             subtraction()
 
         elif operation == "3":
-            Multiplication()
+            multiplication()
  
         elif operation == "4":
-            Division()
+            division()
  
         elif operation == "5":
             print("Good bye. See you later")
