@@ -1,10 +1,10 @@
-Project 1 — Trivia Game
-Goal
+# Project 1 — Trivia Game #
+ ### Goal ###
 
 Build a command-line quiz game that asks questions and calculates the user's score.
 
 
-Version 1
+## Version 1 ##
     list of questions 
     store the answers
     randomly pick question
@@ -13,9 +13,9 @@ Version 1
     keep track of the score 
     tell the user thier score 
 
-Version 2
+## Version 2 ##
 
-Functional requirements
+### Functional requirements ###
     Store multiple questions.
     Each question should have multiple answer choices.
     Display one question at a time.

@@ -77,11 +77,11 @@ The objective is:
   * [✔️] Sets
   * [✔️] Dictionaries
   * [✔️] Strings
-  * [ ] File Handling
+  * [✔️] File Handling
   * [ ] JSON
   * [ ] CSV
   * [✔️] Exception Handling
-  * [ ] Modules & Packages
+  * [✔️] Modules & Packages
   * [ ] Virtual Environments
   * [ ] Object-Oriented Programming
 * [ ] Write clean and maintainable Python
@@ -530,8 +530,8 @@ I will track meaningful milestones rather than simply counting hours studied.
 ```text
 [✔️] Learned Python fundamentals
 [✔️] Built first Python project
-[x] Learned file handling
-[x] Built multiple CLI applications
+[✔️] Learned file handling
+[✔️] Built multiple CLI applications
 [ ] Complete Student Management System
 [ ] Learn SQL
 [ ] Build database-backed application

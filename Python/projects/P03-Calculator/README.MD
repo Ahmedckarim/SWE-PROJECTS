@@ -1,6 +1,6 @@
-Calculator  based on CL
+# Calculator  based on CL #
 
-Version1  Functional requirements
+## Version1  Functional requirements ##
     Display a menu with available operations:
     Addition
     Subtraction
@@ -37,7 +37,7 @@ The main problem was repeated a lot of code.
 
     Only the actual operation changes.
 
-Next I'll build v2 to solve, improve and add these extra  features.
+Next I'll build V2 to solve, improve and add these extra  features.
 
     Add exponentiation.
     Add modulus.
