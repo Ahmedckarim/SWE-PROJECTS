@@ -14,13 +14,16 @@ import random
 import string
 
 def generate_password():
-    length = int(input("Enter the desired password length: ").strip())
+    try:
+        length = int(input("Enter the desired password length: ").strip())
+    except ValueError:
+        print("Please Enter a valid number.")
     include_uppercase = input("Include uppercase latters(yes/no)").strip().lower()
     include_special = input("Include special charecters (yes/no)").strip().lower()
     include_digits = input("Include digits (yes/no)").strip().lower()
 
-    if length < 4:
-        print(" Password length must be at least 4 charecters.")
+    if length < 8:
+        print(" Password length must be at least 8 charecters.")
         return
     
     lower = string.ascii_lowercase
