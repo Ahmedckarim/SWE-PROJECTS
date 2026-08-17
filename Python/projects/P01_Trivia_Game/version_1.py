@@ -8,7 +8,7 @@
 
 import random
 
-Questions = {
+questions = {
     "What does CPU stand for?": "Central Processing Unit",
     "What does RAM stand for?": "Random Access Memory",
     "What does HTML stand for?": "HyperText Markup Language",
@@ -23,24 +23,24 @@ Questions = {
 
 def trivia_game():
     print("Wlecome to Quiz game")
-    Questions_list = list(Questions.keys())
+    questions_list = list(questions.keys())
     total_questions = 5
     score = 0
 
-    select_questions = random.sample(Questions_list, total_questions)
+    select_questions = random.sample(questions_list, total_questions)
 
     for i,question in enumerate(select_questions, start= 1):
         print(f"{i}. {question}")
         user_answer = input("Your answer: ").lower().strip()
 
-        correct_answer = Questions[question]
+        correct_answer = questions[question].lower()
 
-        if correct_answer.lower() == user_answer:
+        if correct_answer == user_answer:
             print("Correct!\n")
             score += 1
         else:
             print(f"Wrong. the correct answer is {correct_answer}")
-    print(f"Game over! your final score is {total_questions}/{score}\n")
+    print(f"Game over! your final score is {score}\{total_questions}")
 
     
     
