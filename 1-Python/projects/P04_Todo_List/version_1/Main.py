@@ -1,5 +1,7 @@
 
 # show menu
+# load tasks
+# save tasks into file
 # Add a task
 # View tasks
 # Delete a task
