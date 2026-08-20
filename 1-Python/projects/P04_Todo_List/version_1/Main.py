@@ -8,6 +8,7 @@
 
 tasks = ["cooking", "reading"]
 complete = " [Complete]"
+
 def menu():
     print("=== To-Do List Manager ===")
     print("1.View tasks")
@@ -15,6 +16,8 @@ def menu():
     print("3.Mark task as completed")
     print("4. Delete a task")
     print("5. Exit")
+
+
 
 
 def view_tasks(tasks):
@@ -29,9 +32,11 @@ def view_tasks(tasks):
 
 def  add_task(tasks):
     task = input("Enter a task: ")
-    tasks.append(task)
-    print(f"{task}. Added successfully")
-    
+    if task:
+        tasks.append(task)
+        print(f"{task}. Added successfully")
+    else:
+        print("Task can not be empty")
 def mark_task(tasks):
     view_tasks(tasks)
     try:
@@ -79,10 +84,9 @@ def main():
         elif choice == "5":
             print("Goodbye. Thanks for using this todo-list manager.")
             break
+        else:
+            print("Invalid choice.")
     
-
-
-
 
 main()
 
