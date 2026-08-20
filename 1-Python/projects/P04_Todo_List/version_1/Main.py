@@ -21,33 +21,30 @@ def menu():
     print("5. Exit")
 
 def load_task():
-    try:
-        with open(file_name, "r") as file:
-            if task:
-                for num,task in enumerate(file_name , start= 1):
-                    print(f"{num}:{task}")
-            else:
-                print('No tasks available to show.')
+    try:    
+        with open(file_name, "r") as tasks:
+           for num, task in enumerate(tasks, start= 1):
+               return f"{num}:{task}"
     except FileNotFoundError:
         print("This file name does't exist.")
     
 def save_task(tasks):
     try:
-        with open(file_name, "a") as file:
+        with open(file_name, "w") as file:
             for num, task in enumerate(tasks, start= 1):
-                file.write(f"{num}: {task}")
+                file.write(f"{num}: {task}\n")
                 print("Task saved succesfully.")
     except:
         print("Failed to save.")
 
 def view_tasks(tasks):
-    load_task()
+    tasks = load_task()
     if not tasks:
         print("There are no tasks yet.")
     else:
         print("-"*20)
         for num, task in enumerate(tasks, start= 1):
-            print(f"{num}.{task}")
+            print(f"{num}.{task}".strip())
         print("-"*20)
 
 
@@ -60,7 +57,7 @@ def  add_task(tasks):
     else:
         print("Task can not be empty")
 def mark_task(tasks):
-    view_tasks()
+    view_tasks(tasks)
     try:
         task_number = int(input("Enter the task number: ")) -1
         if 0 <= task_number <= len(tasks):
@@ -68,6 +65,7 @@ def mark_task(tasks):
                 print("This task already completed.")
             else: 
                 tasks[task_number] = tasks[task_number] + complete
+                save_task(tasks)
                 print("marked successfully.")
         else:
             print("Invalid task number.")
@@ -84,6 +82,7 @@ def delete_task(tasks):
         task_number = int(input("Enter the task number: ")) -1
         if 0 <= task_number < len(tasks):
             tasks.pop(task_number)
+            save_task(tasks)
             print("Task deleted succesfully.")
         else:
             print("Invalid task number.")
