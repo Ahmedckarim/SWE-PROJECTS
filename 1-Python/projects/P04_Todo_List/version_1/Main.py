@@ -22,29 +22,33 @@ def menu():
 
 def load_task():
     try:    
-        with open(file_name, "r") as tasks:
-           for num, task in enumerate(tasks, start= 1):
-               return f"{num}:{task}"
+        with open(file_name, "r") as file:
+           tasks = [task.strip() for task in file]
+           return tasks
+        
     except FileNotFoundError:
         print("This file name does't exist.")
+        return []
     
+
+
 def save_task(tasks):
     try:
         with open(file_name, "w") as file:
             for num, task in enumerate(tasks, start= 1):
                 file.write(f"{num}: {task}\n")
-                print("Task saved succesfully.")
+            print("Task saved succesfully.")
     except:
         print("Failed to save.")
 
 def view_tasks(tasks):
-    tasks = load_task()
+    tasks = list(load_task())
     if not tasks:
         print("There are no tasks yet.")
     else:
         print("-"*20)
-        for num, task in enumerate(tasks, start= 1):
-            print(f"{num}.{task}".strip())
+        for  task in tasks:
+            print(f"{task}".strip())
         print("-"*20)
 
 
@@ -57,10 +61,13 @@ def  add_task(tasks):
     else:
         print("Task can not be empty")
 def mark_task(tasks):
+    if not tasks:
+        print("No tasks available")
+        return
     view_tasks(tasks)
     try:
         task_number = int(input("Enter the task number: ")) -1
-        if 0 <= task_number <= len(tasks):
+        if 0 <= task_number < len(tasks):
             if complete in tasks[task_number]:
                 print("This task already completed.")
             else: 
