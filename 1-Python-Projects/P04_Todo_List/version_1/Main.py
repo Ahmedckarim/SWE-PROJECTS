@@ -97,6 +97,7 @@ def delete_task(tasks):
 
 def main():
     tasks = load_task()
+    view_tasks(tasks)
     while True:
         menu()
         choice = input("Enter your Choice: ")

@@ -7,9 +7,10 @@
 # 5. Delete student 
 # 6. Calculate average grade
 # 7. Exist 
+import json
+ 
+file_name = "students.json"
 
-
-students = []
 def welcome():
     print("=== STUDENT MANEGEMENT SYSTEM ===")
     print("1. Add student ")
@@ -22,11 +23,23 @@ def welcome():
 
 
 def load_student():
-    pass
-def save_student():
-    pass
+    try:
+        with open(file_name, "r") as file:
+            students = [student for student in file]
+            return students
+        
+    except FileNotFoundError:
+        print("there is no student")
+        return []
 
-def add_student():
+def save_student(students):
+    try:
+        with open(file_name, "w") as file:
+            json.dump(students, file)
+    except:
+        print("Failed to save.")
+
+def add_student(students):
     try:
         student_ID = int(input("Enter student ID: "))
         name = input("Enter student name: ")
@@ -48,13 +61,14 @@ def add_student():
             "grades": grades
         }
         students.append(student)
+        save_student(students)
     
         print("Student added successfully!")
         
     except ValueError:
         print("Invalid input. Please enter numbers where required.")
 
-def view_students():
+def view_students(students):
     if not students:
         print("No students found.")
     else:
@@ -63,6 +77,7 @@ def view_students():
 
 def search_student():
     pass
+
 def upgrade_student():
     pass
 def delete_student():
@@ -71,24 +86,26 @@ def calculate_grade():
     pass
 
 def main():
+    students = load_student()
+    view_students(students)
     welcome()
     while True:
         choice = input("Enter your choice: ")
         if choice == "1":
-            add_student()
+            add_student(students)
         elif choice == "2":
-            view_students()
+            view_students(students)
         elif choice == "3":
-            search_student()
+            search_student(students)
         elif choice == "4":
-            upgrade_student()
+            upgrade_student(students)
         elif choice == "5":
-            delete_student()
+            delete_student(students)
         elif choice == "6":
-            calculate_grade()
+            calculate_grade(students)
         elif choice == "7":
             print("Exiting...")
-            return
+            break
         else:
             print("Invalid choice. Please try again.")
 
