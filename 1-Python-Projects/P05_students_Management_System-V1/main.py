@@ -25,7 +25,7 @@ def welcome():
 def load_student():
     try:
         with open(file_name, "r") as file:
-            students = [student for student in file]
+            students = json.load(file)
             return students
         
     except FileNotFoundError:
@@ -33,11 +33,10 @@ def load_student():
         return []
 
 def save_student(students):
-    try:
-        with open(file_name, "w") as file:
-            json.dump(students, file)
-    except:
-        print("Failed to save.")
+
+    with open(file_name, "w") as file:
+        json.dump(students, file)
+
 
 def add_student(students):
     try:
