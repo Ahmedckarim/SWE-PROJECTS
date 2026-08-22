@@ -35,20 +35,19 @@ def load_task():
 def save_task(tasks):
     try:
         with open(file_name, "w") as file:
-            for num, task in enumerate(tasks, start= 1):
-                file.write(f"{num}: {task}\n")
+            for  task in (tasks):
+                file.write(f"{task}\n")
             print("Task saved succesfully.")
-    except:
+    except OSError:
         print("Failed to save.")
 
 def view_tasks(tasks):
-    tasks = list(load_task())
     if not tasks:
         print("There are no tasks yet.")
     else:
         print("-"*20)
-        for  task in tasks:
-            print(f"{task}".strip())
+        for  num,task in enumerate(tasks, start= 1):
+            print(f"{num}:{task}".strip())
         print("-"*20)
 
 
