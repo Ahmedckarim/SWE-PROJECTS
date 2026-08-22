@@ -270,11 +270,11 @@ I use projects to turn theoretical knowledge into engineering ability.
 
 ### Completed / In Progress
 
-* [ ] Calculator
-* [ ] Trivia Game
-* [ ] Random Password Generator
-* [ ] To-Do List
-* [ ] Student Management System
+* [] Trivia Game
+* [✔️]  Random Password Generator
+* [✔️] Calculator
+* [✔️ ] To-Do List V1
+* [ ] Student Management System V1
 
 Each project introduces new concepts and increases in complexity.
 
