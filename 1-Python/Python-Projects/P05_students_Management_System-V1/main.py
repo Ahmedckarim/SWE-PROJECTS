@@ -41,6 +41,7 @@ def save_student(students):
 def add_student(students):
     try:
         student_ID = int(input("Enter student ID: "))
+        
         name = input("Enter student name: ")
         age = int(input("Enter student age: "))
 
@@ -59,6 +60,10 @@ def add_student(students):
             "age": age,
             "grades": grades
         }
+        if student_ID == students[student.keys()]:
+                    print("this student id already exist")
+                    return
+        
         students.append(student)
         save_student(students)
     

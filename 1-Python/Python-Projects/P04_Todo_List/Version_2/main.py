@@ -52,7 +52,7 @@ def mark_task_complete(tasks):
     view_tasks(tasks)
     task_number = int(input("Enter the task number to mark as complete: ").strip())
     try:
-        if 1 <= task_number <= len(tasks):
+        if 1 <= task_number < len(tasks):
             tasks["tasks"][task_number - 1]["complete"] = True
             save_tasks(tasks)
             print("Task marked as a complete.")
