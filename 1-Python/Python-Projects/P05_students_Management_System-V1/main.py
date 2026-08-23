@@ -13,8 +13,9 @@ file_name = "students.json"
 
 def welcome():
     print("=== STUDENT MANEGEMENT SYSTEM ===")
-    print("1. Add student ")
-    print("2. view all students")
+    
+    print("1. view all students")
+    print("2. Add student ")
     print("3. Search student ")
     print("4. Update student ")
     print("5. Delete student")
@@ -38,9 +39,19 @@ def save_student(students):
         json.dump(students, file)
 
 
+def view_students(students):
+    if not students:
+        print("No students found.")
+    else:
+        for student in students:
+            print(f"ID: {student['ID']}, Name: {student['name']}, Age: {student['age']}, Grades: {student['grades']}")
+
 def add_student(students):
     try:
         student_ID = int(input("Enter student ID: "))
+        if any(student["ID"] == student_ID for student in students):
+            print("this ID already exist.\n")
+            return
         
         name = input("Enter student name: ")
         age = int(input("Enter student age: "))
@@ -60,30 +71,62 @@ def add_student(students):
             "age": age,
             "grades": grades
         }
-        if student_ID == students[student.keys()]:
-                    print("this student id already exist")
-                    return
+        
         
         students.append(student)
-        save_student(students)
-    
         print("Student added successfully!")
+        save_student(students)
         
     except ValueError:
         print("Invalid input. Please enter numbers where required.")
 
-def view_students(students):
-    if not students:
-        print("No students found.")
-    else:
+def search_student(students):
+    try:
+        student_ID = int(input("Enter the student ID: "))
         for student in students:
-            print(f"ID: {student['ID']}, Name: {student['name']}, Age: {student['age']}, Grades: {student['grades']}")
+            if student["ID"] == student_ID:
+                print(f"ID: {student['ID']}, Name: {student['name']}, Age: {student['age']}, Grades: {student['grades']}")
+                        
+    except ValueError:
+        print("Enter a valid ID")
 
-def search_student():
-    pass
+def upgrade_student(students):
+    try:
+        student_ID = int(input("Enter the student ID: "))
+        for student in students:
+            if student["ID"] == student_ID:
+                print("Enter the Updated student data.")
 
-def upgrade_student():
-    pass
+                name = input("Enter student name: ")
+                age = int(input("Enter student age: "))
+        
+                grades = []
+        
+                for i in range(3):
+                    grade = float(input(f"Enter grade {i + 1}: "))
+        
+                    if grade < 0 or grade > 100:
+                        print("grade must be between 0 and 100.")
+                        return
+                    grades.append(grade)
+                update_student = {
+                    "ID": student_ID,
+                    "name": name,
+                    "age": age,
+                    "grades": grades
+                }
+                student["name"] = name
+                student["age"] = age
+                student["grades"] = grades
+
+                save_student(students)
+                print("Student Updated successfully.")
+                return
+        print("Student Id not found.")
+    except ValueError:
+        print("Invalid input. Please enter numbers where required.")
+
+    
 def delete_student():
     pass
 def calculate_grade():
@@ -96,9 +139,9 @@ def main():
     while True:
         choice = input("Enter your choice: ")
         if choice == "1":
-            add_student(students)
+             view_students(students)
         elif choice == "2":
-            view_students(students)
+            add_student(students)
         elif choice == "3":
             search_student(students)
         elif choice == "4":
