@@ -11,16 +11,15 @@ import json
  
 file_name = "students.json"
 
-def welcome():
-    print("=== STUDENT MANEGEMENT SYSTEM ===")
-    
+def menu():
+    print("\n=== STUDENT MANEGEMENT SYSTEM ===")
     print("1. view all students")
     print("2. Add student ")
     print("3. Search student ")
     print("4. Update student ")
     print("5. Delete student")
     print("6. Calculate average grades")
-    print("7. Exist")
+    print("7. Exit")
 
 
 def load_student():
@@ -54,8 +53,14 @@ def add_student(students):
             return
         
         name = input("Enter student name: ")
+        if not name:
+            print("Please Enter a name")
+            return
         age = int(input("Enter student age: "))
-
+        if age > 0 and age > 100:
+            print("Student age should be greater then 0 and less then 100.")
+            return
+        
         grades = []
 
         for i in range(3):
@@ -86,17 +91,20 @@ def search_student(students):
         for student in students:
             if student["ID"] == student_ID:
                 print(f"ID: {student['ID']}, Name: {student['name']}, Age: {student['age']}, Grades: {student['grades']}")
-                        
+                return
+            else:
+                print("Student ID not found.")  
     except ValueError:
         print("Enter a valid ID")
 
-def upgrade_student(students):
+def update_student(students):
+    view_students(students)
     try:
         student_ID = int(input("Enter the student ID: "))
         for student in students:
             if student["ID"] == student_ID:
                 print("Enter the Updated student data.")
-
+                student_ID = int(input("Enter student ID: "))
                 name = input("Enter student name: ")
                 age = int(input("Enter student age: "))
         
@@ -109,12 +117,8 @@ def upgrade_student(students):
                         print("grade must be between 0 and 100.")
                         return
                     grades.append(grade)
-                update_student = {
-                    "ID": student_ID,
-                    "name": name,
-                    "age": age,
-                    "grades": grades
-                }
+                    
+                student["ID"] = student_ID
                 student["name"] = name
                 student["age"] = age
                 student["grades"] = grades
@@ -128,6 +132,7 @@ def upgrade_student(students):
 
     
 def delete_student(students):
+    view_students(students)
     try:
         student_ID = int(input("Enter the student ID: "))
         for student in students:
@@ -142,19 +147,22 @@ def delete_student(students):
         print("Invalid ID number.")
      
 def calculate_grade(students):
-    student_ID = int(input("Enter the student ID: "))
-    for student in students:
-        if student["ID"] == student_ID:
-            print(sum(student["grades"]) / 3)
-            return
+    view_students(students)
+    try:
+        student_ID = int(input("Enter the student ID: "))
+        for student in students:
+            if student["ID"] == student_ID:
+                print(sum(student["grades"]) / 3)
+                return
+    except ValueError:
+        print("Invalid Student ID.")
     
     
 
 def main():
     students = load_student()
-    view_students(students)
-    welcome()
     while True:
+        menu()
         choice = input("Enter your choice: ")
         if choice == "1":
              view_students(students)
@@ -163,7 +171,7 @@ def main():
         elif choice == "3":
             search_student(students)
         elif choice == "4":
-            upgrade_student(students)
+            update_student(students)
         elif choice == "5":
             delete_student(students)
         elif choice == "6":
