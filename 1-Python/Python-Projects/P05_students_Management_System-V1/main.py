@@ -127,10 +127,28 @@ def upgrade_student(students):
         print("Invalid input. Please enter numbers where required.")
 
     
-def delete_student():
-    pass
-def calculate_grade():
-    pass
+def delete_student(students):
+    try:
+        student_ID = int(input("Enter the student ID: "))
+        for student in students:
+            if student["ID"] == student_ID:
+                students.remove(student)
+                
+                save_student(students)
+                print("Student deleted")
+                return
+        print("Student not found.")
+    except ValueError:
+        print("Invalid ID number.")
+     
+def calculate_grade(students):
+    student_ID = int(input("Enter the student ID: "))
+    for student in students:
+        if student["ID"] == student_ID:
+            print(sum(student["grades"]) / 3)
+            return
+    
+    
 
 def main():
     students = load_student()
