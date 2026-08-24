@@ -31,7 +31,9 @@ def load_student():
     except FileNotFoundError:
         print("there is no student")
         return []
-
+    except json.JSONDecodeError:
+        print("Error: The Json file is corrupted or invalid.")
+        
 def save_student(students):
 
     with open(file_name, "w") as file:
@@ -57,7 +59,7 @@ def add_student(students):
             print("Please Enter a name")
             return
         age = int(input("Enter student age: "))
-        if age > 0 and age > 100:
+        if age <= 0 or age > 100:
             print("Student age should be greater then 0 and less then 100.")
             return
         
@@ -92,8 +94,8 @@ def search_student(students):
             if student["ID"] == student_ID:
                 print(f"ID: {student['ID']}, Name: {student['name']}, Age: {student['age']}, Grades: {student['grades']}")
                 return
-            else:
-                print("Student ID not found.")  
+            
+        print("Student ID not found.")  
     except ValueError:
         print("Enter a valid ID")
 
@@ -104,7 +106,7 @@ def update_student(students):
         for student in students:
             if student["ID"] == student_ID:
                 print("Enter the Updated student data.")
-                student_ID = int(input("Enter student ID: "))
+                
                 name = input("Enter student name: ")
                 age = int(input("Enter student age: "))
         
@@ -118,7 +120,7 @@ def update_student(students):
                         return
                     grades.append(grade)
                     
-                student["ID"] = student_ID
+                
                 student["name"] = name
                 student["age"] = age
                 student["grades"] = grades
@@ -152,7 +154,7 @@ def calculate_grade(students):
         student_ID = int(input("Enter the student ID: "))
         for student in students:
             if student["ID"] == student_ID:
-                print(sum(student["grades"]) / 3)
+                print(sum(student["grades"]) / len(student["grades"]))
                 return
     except ValueError:
         print("Invalid Student ID.")
