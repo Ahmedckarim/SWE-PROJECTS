@@ -1,18 +1,21 @@
 # Python mastery projects
 
-* ### Trivia Game
-* ### Password Generator
-* ### Calculator 
+## What I learned and build 
+### Milestone 01 — Python Fundamentals
+* Learned variables, data types, operators, conditions and loops.
+### Projects 
+* Trivia Game
+* Basic Calculater 
 
-* functions 
-* Data strucurse 
-* Loops
-* Statements
-* Basic exception handling
+### Milestone 02 — Functions & Data Structures
+* Started breaking programs into reusable functions and working with lists, dictionaries, tuples and sets.
 
-* ###  To-Do List amnager 
-* ###  Students manager 
+### Projects
+* Password Generater 
+* To-Do List CLI app 
 
-* File handling 
-* Json
-* Exception handling
+### Milestone 03 — File Handling
+* Learned how to persist application data using TXT, CSV and JSON.
+
+### Projects
+* Students management CLI system
