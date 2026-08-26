@@ -6,8 +6,12 @@
 # 3. Update expense
 # 4. Delete expense
 # 5. View summary
+import json
+import csv
 
 
+
+json_file_name = "Expenses.json"
 
 def menu():
     print("1. Add expense")
@@ -18,12 +22,40 @@ def menu():
     print("6. Exit")
 
 def load_expense():
-    pass
-def save_expense():
-    pass
+    try:
+        with open(json_file_name, "r") as file:
+            return json.load( file)
+        
+    except FileNotFoundError:
+        print("There are no expenses available.")
+        return []
+    except json.JSONDecodeError:
+        print("Error: The Json file is corrupted or invalid.")
+    
+def save_expense(expenses):
+    with open(json_file_name, "w") as file:
+        json.dump(expenses, file)
+        print("expense Saved")
 
-def add_expense():
-    pass
+def add_expense(expenses):
+    description = input("Enter a description: ")
+    amount = int(input("Enter an amount: "))
+
+    if amount <= 0: 
+        print("Amount can not be a zero or negative number.")
+        return
+
+    expense = {
+        "description": description ,
+        "Amount": amount,
+    }
+    expenses.append(expense)
+    
+    save_expense(expenses)
+    print("Expense added successfully.")
+
+
+ 
 def view_all_expenses():
     pass
 def update_expense():
@@ -35,10 +67,10 @@ def view_sammury():
 
 def main():
 
-    expenses = load_expense()
-
+    
     while True:
         menu()
+        expenses = load_expense()
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -55,4 +87,4 @@ def main():
             print("Thanks for using this app. bye👋")
             break
 
-menu()
+main()
