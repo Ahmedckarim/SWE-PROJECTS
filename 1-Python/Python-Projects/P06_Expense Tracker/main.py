@@ -38,26 +38,45 @@ def save_expense(expenses):
         print("expense Saved")
 
 def add_expense(expenses):
-    description = input("Enter a description: ")
-    amount = int(input("Enter an amount: "))
+    try:
+        expense_id = int(input("Enter expense ID: "))
 
-    if amount <= 0: 
-        print("Amount can not be a zero or negative number.")
-        return
+        # if any(expense["ID"] == expense_id for expense in expenses):
+        #     print("This ID already exist.")
+        #     return
+        
+        description = input("Enter a description: ")
+        if not description:
+            print("Description must be writed.")
+            return
+        
+        amount = int(input("Enter an amount: "))
 
-    expense = {
-        "description": description ,
-        "Amount": amount,
-    }
-    expenses.append(expense)
-    
-    save_expense(expenses)
-    print("Expense added successfully.")
+        if amount <= 0: 
+            print("Amount can not be a zero or negative number.")
+            return
 
+        expense = {
+            "ID": expense_id,
+            "description": description ,
+            "Amount": amount,
+        }
+        expenses.append(expense)
+        
+        save_expense(expenses)
+        print("Expense added successfully.")
+    except ValueError:
+        print("Please enter numbers where required.")
 
  
-def view_all_expenses():
-    pass
+def view_all_expenses(expenses):
+    if expenses:
+        for i,expense in enumerate(expenses, start= 1):
+            print(f"ID:{expense['ID']} Description:{expense["description"]} Amount: {expense["Amount"]}")
+
+
+
+
 def update_expense():
     pass
 def delete_expense():
@@ -66,11 +85,11 @@ def view_sammury():
     pass
 
 def main():
-
+    expenses = load_expense()
     
     while True:
         menu()
-        expenses = load_expense()
+        
         choice = input("Enter your choice: ")
 
         if choice == "1":
