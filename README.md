@@ -110,7 +110,7 @@ The objective is:
 
 Learn: Arrays, Strings, Linked Lists, Stacks, Queues, Heaps, Hash Tables, Trees, Graphs, Sorting, Searching, Recursion, Dynamic Programming
 
-- 🆕 Tries — common in autocomplete/search features and some LLM tokenizer discussions
+-  Tries — common in autocomplete/search features and some LLM tokenizer discussions
 
 Practice: LeetCode, HackerRank
 
@@ -134,7 +134,7 @@ Master: SELECT, JOIN, GROUP BY, HAVING, CTEs, Window Functions, Transactions, In
 
 Learn: Schema design, Constraints, Relationships, Normalization, Query optimization, Backup/restore
 
-### 🆕 3. NoSQL & Specialized Stores
+###  3. NoSQL & Specialized Stores
 
 - Redis (caching, rate limiting, session store, pub/sub)
 - MongoDB or similar (document store) — at least conceptually, many AI apps use it for unstructured data
@@ -204,7 +204,7 @@ Learn: Components, Hooks, Routing, Context, State Management
 
 Learn: App Router, Server Components, API Routes, SSR, SSG
 
-- 🆕 Streaming UI patterns (rendering tokens as they arrive from an LLM)
+-  Streaming UI patterns (rendering tokens as they arrive from an LLM)
 
 **🛠 Projects:**
 
@@ -226,7 +226,7 @@ Images, Containers, Docker Compose, Volumes, Networking
 Deploy to: Render, Railway, Fly.io, DigitalOcean, AWS (later)
 Learn: Nginx, HTTPS, Environment variables, CI/CD (GitHub Actions)
 
-### 🆕 3. Observability
+###  3. Observability
 
 - Logging (structured logs)
 - Monitoring/metrics (Prometheus/Grafana or hosted equivalent)
@@ -258,7 +258,7 @@ Learn:
 - Consistency models (CAP theorem, eventual consistency)
 - Rate limiting & throttling design
 - Designing for failure (circuit breakers, retries, timeouts, graceful degradation)
-- 🆕 AI-specific system design: RAG pipelines, scalable LLM inference services, recommendation systems
+-  AI-specific system design: RAG pipelines, scalable LLM inference services, recommendation systems
 
 Resources: "Designing Data-Intensive Applications" (book), ByteByteGo, System Design Primer (GitHub)
 
@@ -314,11 +314,11 @@ I use projects to turn theoretical knowledge into engineering ability.
 
 ### Completed / In Progress
 
-* [] Trivia Game
+* [✔️] Trivia Game
 * [✔️]  Random Password Generator
 * [✔️] Calculator
 * [✔️ ] To-Do List V1
-* [ ] Student Management System V1
+* [✔️] Student Management System V1
 
 Each project introduces new concepts and increases in complexity.
 
