@@ -14,3 +14,10 @@ simran.tables = [1,2]
 print(raj.tables)
 print(simran.tables)
 print(Waiter.tables)
+
+
+
+
+
+
+ 
