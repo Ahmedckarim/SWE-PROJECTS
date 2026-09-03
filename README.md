@@ -36,11 +36,11 @@ Git & GitHub
    ↓
 SQL & Databases
    ↓
-Linux
-   ↓
 Backend Development
    ↓
 APIs & Authentication
+   ↓
+Linux
    ↓
 Frontend Development
    ↓
@@ -72,7 +72,7 @@ The objective is:
     - OOP
     - Modules, packages and packages managements
     - ✅Exceptions
-    - File handling
+    - ✅File handling
     - Virtual environments
     - Testing basics
     - Type hints (`typing` module) — you'll need this for FastAPI/Pydantic later
@@ -315,9 +315,9 @@ I use projects to turn theoretical knowledge into engineering ability.
 ### Completed / In Progress
 
 * [✔️] Trivia Game
-* [✔️]  Random Password Generator
+* [✔️] Random Password Generator
 * [✔️] Calculator
-* [✔️ ] To-Do List V1
+* [✔️] To-Do List V1
 * [✔️] Student Management System V1
 
 Each project introduces new concepts and increases in complexity.
