@@ -70,10 +70,10 @@ The objective is:
     - ✅Data types
     - ✅Functions
     - OOP
-    - Modules, packages and packages managements
+    - ✅Modules, packages and package manager(pip)
     - ✅Exceptions
     - ✅File handling
-    - Virtual environments
+    - ✅Virtual environments
     - Testing basics
     - Type hints (`typing` module) — you'll need this for FastAPI/Pydantic later
     - Decorators & context managers
