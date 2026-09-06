@@ -34,3 +34,27 @@ def Export_to_CSV():
 def Import_from_CSV():
     pass
 
+
+
+def main():
+    menu()
+
+    chioce = input("Enter your choice: ")
+
+    if chioce == "1":
+        add_income()
+    elif chioce == "2":
+        add_expense()
+    elif chioce == "3":
+        view_transtions()
+    elif chioce == "":
+    elif chioce == "":
+    elif chioce == "":
+    elif chioce == "":
+    elif chioce == "":
+    elif chioce == "":
+    elif chioce == "":
+
+
+
+menu()
