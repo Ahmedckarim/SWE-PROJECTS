@@ -13,8 +13,9 @@ def menu():
     print("11. Exit")
 
 
-def add_income():
+def add_income(transtion):
     pass
+    
 def add_expense():
     pass
 def view_transtions():
