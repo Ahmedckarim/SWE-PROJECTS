@@ -37,24 +37,36 @@ def Import_from_CSV():
 
 
 def main():
-    menu()
+    while True:
+        menu()
+        chioce = input("Enter your choice: ")
 
-    chioce = input("Enter your choice: ")
+        if chioce == "1":
+            add_income()
+        elif chioce == "2":
+            add_expense()
+        elif chioce == "3":
+            view_transtions()
+        elif chioce == "4":
+            view_Categories()
+        elif chioce == "5":
+            Monthly_Summary()
+        elif chioce == "6":
+            Total_Income()
+        elif chioce == "7":
+            Total_Expenses()
+        elif chioce == "8":
+            Current_Balance()
+        elif chioce == "9":
+            Export_to_CSV()
+        elif chioce == "10":
+            Import_from_CSV()
+        elif chioce == "11":
+            print("Exiting...")
+            return
+        else:
+            print("Invalid choice. please enter a valid choice.")
 
-    if chioce == "1":
-        add_income()
-    elif chioce == "2":
-        add_expense()
-    elif chioce == "3":
-        view_transtions()
-    elif chioce == "":
-    elif chioce == "":
-    elif chioce == "":
-    elif chioce == "":
-    elif chioce == "":
-    elif chioce == "":
-    elif chioce == "":
 
 
-
-menu()
+main()
