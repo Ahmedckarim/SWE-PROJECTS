@@ -1,3 +1,7 @@
+import csv
+import json
+from datetime import datetime
+
 
 def menu():
     print("1. Add Income")
@@ -13,11 +17,42 @@ def menu():
     print("11. Exit")
 
 
-def add_income(transtion):
-    pass
+def add_income(transtions):
+    transtion_id = int(input("Enter transtion ID: "))
+    amount = int(input("Enter an amount: "))
+    category = int("Enter the transtion category: ")
+    description = int("Enter the description: ")
+    date = int("enter the transtion date: ")
+
+    transtion = {
+        "ID": transtion_id,
+        "Amount": amount,
+        "type": "Income",
+        "Category": category,
+        "Description": description,
+        "Date": date
+    }
+    transtions.append(transtion)
     
-def add_expense():
-    pass
+def add_expense(transtions):
+    transtion_id = int(input("Enter transtion ID: "))
+    amount = int(input("Enter an amount: "))
+    category = int("Enter the transtion category: ")
+    description = int("Enter the description: ")
+    date = int("enter the transtion date: ")
+
+    transtion = {
+        "ID": transtion_id,
+        "Amount": amount,
+        "type": "expense",
+        "Category": category,
+        "Description": description,
+        "Date": date
+    }
+    transtions.append(transtion)
+
+
+    
 def view_transtions():
     pass
 def view_Categories():
