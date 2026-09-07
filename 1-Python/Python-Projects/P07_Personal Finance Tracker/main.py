@@ -2,6 +2,7 @@ import csv
 import json
 from datetime import datetime
 
+file_name = "transaction.json"
 
 def menu():
     print("1. Add Income")
@@ -15,6 +16,22 @@ def menu():
     print("9. Export to CSV")
     print("10. Import from CSV")
     print("11. Exit")
+
+def load_transactions():
+    try:
+        with open(file_name, "r") as file:
+            transtions = json.dump(file)
+            return transtions
+    except FileNotFoundError:
+        print("There is no transactions to show.")
+        return []
+    except json.JSONDecodeError:
+        print("Error: The Json file is corrupted or invalid.")
+    
+def save_transtion(transtions):
+    with open(file_name, "w") as file:
+        json.dump(transtions, file)
+
 
 
 def add_income(transtions):
@@ -33,6 +50,9 @@ def add_income(transtions):
         "Date": date
     }
     transtions.append(transtion)
+
+    save_transtion(transtions)
+    print("Transtion added seccussfully.")
     
 def add_expense(transtions):
     transtion_id = int(input("Enter transtion ID: "))
