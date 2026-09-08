@@ -1,1 +1,1 @@
-[{"ID": 1, "Amount": 200, "type": "Income", "Category": "salary", "Description": "salary", "Date": "08/09/2026"}, {"ID": 2, "Amount": 100, "type": "expense", "Category": "bill", "Description": "bill", "Date": "08/09/2026"}]
+[{"ID": 1, "Amount": 290, "type": "Income", "Category": "salary", "Description": "salry", "Date": "20/2/2023"}, {"ID": 2, "Amount": 30, "type": "Expense", "Category": "food", "Description": "luanch", "Date": "20/2/2026"}]

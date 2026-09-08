@@ -64,7 +64,7 @@ def add_expense(transtions):
     transtion = {
         "ID": transtion_id,
         "Amount": amount,
-        "type": "expense",
+        "type": "Expense",
         "Category": category,
         "Description": description,
         "Date": date
@@ -94,36 +94,34 @@ def view_Categories(transtions):
 def Monthly_Summary():
     pass
 def Total_Income(transtions):
-    if transtions:
-        Total_Income = 0
-        for transtion in transtions:
-            if transtion["type"] == "Income":
-                Total_Income += transtion["Amount"]
-        print(f"Total Income: {Total_Income}")
-    else: 
-        print("There is no transtions yet.")     
+    Total_Income = 0
+
+    for transtion in transtions:
+        if transtion["type"] == "Income":
+            Total_Income += transtion["Amount"]
+
+    print(f"Total Income: {Total_Income}")
+    return Total_Income
 
     
 def Total_Expenses(transtions):
-    if transtions:
-        Total_Expenses = 0
-        for transtion in transtions:
-            if transtion["type"] == "expense":
-                Total_Expenses += transtion["Amount"]
-        print(f"Total expense: {Total_Income}")
-    else: 
-        print("There is no transtions yet.")
+    Total_Expenses = 0
+
+    for transtion in transtions:
+        if transtion["type"] == "Expense":
+            Total_Expenses += transtion["Amount"]
+            
+    print(f"Total expense: {Total_Expenses}")
+    return Total_Expenses
+
 
 def Current_Balance(transtions):
-    if transtions:
-        Total_Income = Total_Income(transtions)
-        Total_Expenses = Total_Expenses(transtions)
+    Total_Income = Total_Income(transtions)
+    Total_Expenses = Total_Expenses(transtions)
 
-        Current_Balance = Total_Income - Total_Expenses
+    Balance = Total_Income - Total_Expenses
 
-        print(f"Current Balanse: {Current_Balance}")
-    else: 
-        print("There is no transtions yet.")
+    print(f"Current Balance: {Balance}")
 
 
 
