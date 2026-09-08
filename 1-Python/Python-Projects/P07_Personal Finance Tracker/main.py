@@ -79,20 +79,54 @@ def view_transtions(transtions):
     if transtions:
         for transtion in transtions:
             print(f"ID:{transtion["ID"]} Amount:{transtion["Amount"]} type:{transtion["type"]} Category:{transtion["Category"]} Description:{transtion["Description"]} Date: {transtion["Date"]}")
-
+    else:
+        print("There is no transtions yet.")
 
 
     
-def view_Categories():
-    pass
+def view_Categories(transtions):
+    if transtions:
+        for transtion in transtions:
+            print(f"{transtion["Category"]}")
+    else: 
+        print("There is no transtions yet.")
+
 def Monthly_Summary():
     pass
-def Total_Income():
-    pass
-def Total_Expenses():
-    pass
-def Current_Balance():
-    pass
+def Total_Income(transtions):
+    if transtions:
+        Total_Income = 0
+        for transtion in transtions:
+            if transtion == transtion["Income"]:
+                Total_Income += transtion["Amount"]
+        print(f"Total Income: {Total_Income}")
+    else: 
+        print("There is no transtions yet.")     
+
+    
+def Total_Expenses(transtions):
+    if transtions:
+        Total_Expenses = 0
+        for transtion in transtions:
+            if transtion == transtion["expense"]:
+                Total_Expenses += transtion["Amount"]
+        print(f"Total expense: {Total_Income}")
+    else: 
+        print("There is no transtions yet.")
+
+def Current_Balance(transtions):
+    if transtions:
+        Total_Income = Total_Income(transtions)
+        Total_Expenses = Total_Expenses(transtions)
+
+        Current_Balance = Total_Income - Total_Expenses
+
+        print(f"Current Balanse: {Current_Balance}")
+    else: 
+        print("There is no transtions yet.")
+
+
+
 def Export_to_CSV():
     pass
 def Import_from_CSV():
@@ -114,15 +148,15 @@ def main():
         elif chioce == "3":
             view_transtions(transtions)
         elif chioce == "4":
-            view_Categories()
+            view_Categories(transtions)
         elif chioce == "5":
             Monthly_Summary()
         elif chioce == "6":
-            Total_Income()
+            Total_Income(transtions)
         elif chioce == "7":
-            Total_Expenses()
+            Total_Expenses(transtions)
         elif chioce == "8":
-            Current_Balance()
+            Current_Balance(transtions)
         elif chioce == "9":
             Export_to_CSV()
         elif chioce == "10":
