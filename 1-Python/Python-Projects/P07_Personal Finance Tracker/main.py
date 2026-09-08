@@ -20,7 +20,7 @@ def menu():
 def load_transactions():
     try:
         with open(file_name, "r") as file:
-            transtions = json.dump(file)
+            transtions = json.load(file)
             return transtions
     except FileNotFoundError:
         print("There is no transactions to show.")
@@ -37,9 +37,9 @@ def save_transtion(transtions):
 def add_income(transtions):
     transtion_id = int(input("Enter transtion ID: "))
     amount = int(input("Enter an amount: "))
-    category = int("Enter the transtion category: ")
-    description = int("Enter the description: ")
-    date = int("enter the transtion date: ")
+    category = input("Enter the transtion category: ")
+    description = input("Enter the description: ")
+    date = input("enter the transtion date: ")
 
     transtion = {
         "ID": transtion_id,
@@ -57,9 +57,9 @@ def add_income(transtions):
 def add_expense(transtions):
     transtion_id = int(input("Enter transtion ID: "))
     amount = int(input("Enter an amount: "))
-    category = int("Enter the transtion category: ")
-    description = int("Enter the description: ")
-    date = int("enter the transtion date: ")
+    category = input("Enter the transtion category: ")
+    description = input("Enter the description: ")
+    date = input("enter the transtion date: ")
 
     transtion = {
         "ID": transtion_id,
@@ -70,11 +70,19 @@ def add_expense(transtions):
         "Date": date
     }
     transtions.append(transtion)
+    
+    save_transtion(transtions)
+    print("Transtion added seccussfully.")
+
+    
+def view_transtions(transtions):    
+    if transtions:
+        for transtion in transtions:
+            print(f"ID:{transtion["ID"]} Amount:{transtion["Amount"]} type:{transtion["type"]} Category:{transtion["Category"]} Description:{transtion["Description"]} Date: {transtion["Date"]}")
+
 
 
     
-def view_transtions():
-    pass
 def view_Categories():
     pass
 def Monthly_Summary():
@@ -93,16 +101,18 @@ def Import_from_CSV():
 
 
 def main():
+    transtions = load_transactions()
+
     while True:
         menu()
         chioce = input("Enter your choice: ")
 
         if chioce == "1":
-            add_income()
+            add_income(transtions)
         elif chioce == "2":
-            add_expense()
+            add_expense(transtions)
         elif chioce == "3":
-            view_transtions()
+            view_transtions(transtions)
         elif chioce == "4":
             view_Categories()
         elif chioce == "5":
