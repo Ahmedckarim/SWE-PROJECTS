@@ -1,1 +1,1 @@
-[{"ID": 1, "Amount": 20, "type": "Income", "Category": "transposrtation", "Description": "bajaj raac", "Date": "08092026"}, {"ID": 1, "Amount": 20, "type": "expense", "Category": "trans", "Description": "bajaj", "Date": "8/09/2026"}]
+[{"ID": 1, "Amount": 200, "type": "Income", "Category": "salary", "Description": "salary", "Date": "08/09/2026"}, {"ID": 2, "Amount": 100, "type": "expense", "Category": "bill", "Description": "bill", "Date": "08/09/2026"}]

@@ -97,7 +97,7 @@ def Total_Income(transtions):
     if transtions:
         Total_Income = 0
         for transtion in transtions:
-            if transtion == transtion["Income"]:
+            if transtion["type"] == "Income":
                 Total_Income += transtion["Amount"]
         print(f"Total Income: {Total_Income}")
     else: 
@@ -108,7 +108,7 @@ def Total_Expenses(transtions):
     if transtions:
         Total_Expenses = 0
         for transtion in transtions:
-            if transtion == transtion["expense"]:
+            if transtion["type"] == "expense":
                 Total_Expenses += transtion["Amount"]
         print(f"Total expense: {Total_Income}")
     else: 
