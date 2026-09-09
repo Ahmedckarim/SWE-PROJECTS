@@ -1,6 +1,6 @@
 import csv
 import json
-from datetime import datetime
+from datetime import date
 
 file_name = "transaction.json"
 
@@ -52,7 +52,7 @@ def add_income(transtions):
         if not description:
             print("Description can not be empty.")
             return
-        date = input("enter the transtion date: ")
+        transaction_date = input("Enter the transaction date (YYYY-MM-DD): ")
 
         transtion = {
             "ID": transtion_id,
@@ -60,7 +60,7 @@ def add_income(transtions):
             "type": "Income",
             "Category": category,
             "Description": description,
-            "Date": date
+            "Date": transaction_date
         }
         transtions.append(transtion)
 
@@ -88,15 +88,14 @@ def add_expense(transtions):
         if not description:
             print("Description can not be empty.")
             return
-        date = input("enter the transtion date: ")
-
+        transaction_date = input("Enter the transaction date (YYYY-MM-DD): ")
         transtion = {
             "ID": transtion_id,
             "Amount": amount,
             "type": "Expense",
             "Category": category,
             "Description": description,
-            "Date": date
+            "transaction_date": date
         }
         transtions.append(transtion)
         
