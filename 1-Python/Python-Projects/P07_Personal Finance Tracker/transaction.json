@@ -1,1 +1,1 @@
-[{"ID": 1, "Amount": 290, "type": "Income", "Category": "salary", "Description": "salry", "Date": "20/2/2023"}, {"ID": 2, "Amount": 30, "type": "Expense", "Category": "food", "Description": "luanch", "Date": "20/2/2026"}]
+[{"ID": 1, "Amount": 290, "type": "Income", "Category": "salary", "Description": "salry", "Date": "20/2/2023"}, {"ID": 2, "Amount": 30, "type": "Expense", "Category": "food", "Description": "luanch", "Date": "20/2/2026"}, {"ID": 3, "Amount": 3, "type": "Expense", "Category": "dayeer", "Description": "naag siyay", "Date": "9/08/2026"}]

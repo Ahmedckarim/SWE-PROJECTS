@@ -35,44 +35,75 @@ def save_transtion(transtions):
 
 
 def add_income(transtions):
-    transtion_id = int(input("Enter transtion ID: "))
-    amount = int(input("Enter an amount: "))
-    category = input("Enter the transtion category: ")
-    description = input("Enter the description: ")
-    date = input("enter the transtion date: ")
+    try:
+        transtion_id = int(input("Enter transtion ID: "))
+        if any(transtion["ID"] == transtion_id for transtion in transtions):
+            print("This transtion ID already exist.")
+            return
+        amount = int(input("Enter an amount: "))
+        if amount <= 0:
+            print("Amount must be greater than zero.")
+            return
+        category = input("Enter the transtion category: ")
+        if not category:
+            print("category can not be empty.")
+            return
+        description = input("Enter the description: ")
+        if not description:
+            print("Description can not be empty.")
+            return
+        date = input("enter the transtion date: ")
 
-    transtion = {
-        "ID": transtion_id,
-        "Amount": amount,
-        "type": "Income",
-        "Category": category,
-        "Description": description,
-        "Date": date
-    }
-    transtions.append(transtion)
+        transtion = {
+            "ID": transtion_id,
+            "Amount": amount,
+            "type": "Income",
+            "Category": category,
+            "Description": description,
+            "Date": date
+        }
+        transtions.append(transtion)
 
-    save_transtion(transtions)
-    print("Transtion added seccussfully.")
+        save_transtion(transtions)
+        print("Transtion added seccussfully.")
+    except ValueError:
+        print("Please enter numbers where reqiered.")
+
     
 def add_expense(transtions):
-    transtion_id = int(input("Enter transtion ID: "))
-    amount = int(input("Enter an amount: "))
-    category = input("Enter the transtion category: ")
-    description = input("Enter the description: ")
-    date = input("enter the transtion date: ")
+    try:
+        transtion_id = int(input("Enter transtion ID: "))
+        if any(transtion["ID"] == transtion_id for transtion in transtions):
+            print("This transtion ID already exist.")
+            return
+        amount = int(input("Enter an amount: "))
+        if amount <= 0:
+            print("Amount must be greater than zero.")
+            return
+        category = input("Enter the transtion category: ")
+        if not category:
+            print("category can not be empty.")
+            return
+        description = input("Enter the description: ")
+        if not description:
+            print("Description can not be empty.")
+            return
+        date = input("enter the transtion date: ")
 
-    transtion = {
-        "ID": transtion_id,
-        "Amount": amount,
-        "type": "Expense",
-        "Category": category,
-        "Description": description,
-        "Date": date
-    }
-    transtions.append(transtion)
-    
-    save_transtion(transtions)
-    print("Transtion added seccussfully.")
+        transtion = {
+            "ID": transtion_id,
+            "Amount": amount,
+            "type": "Expense",
+            "Category": category,
+            "Description": description,
+            "Date": date
+        }
+        transtions.append(transtion)
+        
+        save_transtion(transtions)
+        print("Transtion added seccussfully.")
+    except ValueError:
+        print("Please enter numbers where reqiured.")
 
     
 def view_transtions(transtions):    
