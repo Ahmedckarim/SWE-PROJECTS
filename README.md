@@ -194,7 +194,56 @@ Learn: Sessions, Cookies, JWT, OAuth, Password hashing, Authorization, RBAC
 
 ### 1. HTML / CSS / JavaScript
 
-Learn: ES6+, DOM, Async/Await, Fetch API
+- [HTML](#-html)
+- [CSS](#-css)
+- [JavaScript (ES6+)](#-javascript-es6)
+- [DOM](#-dom)
+- [Async / Await](#-async--await)
+- [Fetch API](#-fetch-api)
+- [Practice Project](#-practice-project)
+
+---
+
+## 🏷 HTML
+
+- Semantic tags: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`
+- Forms: inputs, labels, validation attributes
+- Accessibility basics: `alt` text, `<label>` associations, ARIA roles
+
+## 🎨 CSS
+
+- Flexbox and Grid layout systems
+- Responsive design with media queries
+- CSS variables (custom properties)
+- Box model (content, padding, border, margin)
+- Specificity and the cascade
+
+## ⚡ JavaScript (ES6+)
+
+- Arrow functions, template literals
+- Destructuring, spread/rest operators
+- `let` / `const` vs `var`
+- Modules: `import` / `export`
+- Classes and default parameters
+
+## 🧩 DOM
+
+- Selecting and manipulating elements: `querySelector`, `classList`, `addEventListener`
+- Event bubbling and delegation
+
+## ⏳ Async / Await
+
+- Promises → `async` / `await` syntax
+- Error handling with `try` / `catch`
+
+## 🌍 Fetch API
+
+- Making `GET` / `POST` requests
+- Working with JSON responses
+- Handling errors gracefully
+- Cancelling requests with `AbortController`
+
+---
 
 ### 2. React
 
