@@ -84,16 +84,17 @@ def view_transtions(transtions):
 
 
     
-def view_Categories(transtions):
+def view_categories(transtions):
     if transtions:
         for transtion in transtions:
             print(f"{transtion["Category"]}")
     else: 
         print("There is no transtions yet.")
 
-def Monthly_Summary():
+def monthly_summary():
     pass
-def Total_Income(transtions):
+
+def total_income(transtions):
     Total_Income = 0
 
     for transtion in transtions:
@@ -104,7 +105,7 @@ def Total_Income(transtions):
     return Total_Income
 
     
-def Total_Expenses(transtions):
+def total_expenses(transtions):
     Total_Expenses = 0
 
     for transtion in transtions:
@@ -115,19 +116,19 @@ def Total_Expenses(transtions):
     return Total_Expenses
 
 
-def Current_Balance(transtions):
-    Total_Income = Total_Income(transtions)
-    Total_Expenses = Total_Expenses(transtions)
+def Current_balance(transtions):
+    income = total_income(transtions)
+    expense = total_expenses(transtions)
 
-    Balance = Total_Income - Total_Expenses
+    Balance = income - expense
 
     print(f"Current Balance: {Balance}")
 
 
 
-def Export_to_CSV():
+def export_to_CSV():
     pass
-def Import_from_CSV():
+def import_from_CSV():
     pass
 
 
@@ -146,19 +147,19 @@ def main():
         elif chioce == "3":
             view_transtions(transtions)
         elif chioce == "4":
-            view_Categories(transtions)
+            view_categories(transtions)
         elif chioce == "5":
-            Monthly_Summary()
+            monthly_summary()
         elif chioce == "6":
-            Total_Income(transtions)
+            total_income(transtions)
         elif chioce == "7":
-            Total_Expenses(transtions)
+            total_expenses(transtions)
         elif chioce == "8":
-            Current_Balance(transtions)
+            Current_balance(transtions)
         elif chioce == "9":
-            Export_to_CSV()
+            export_to_CSV()
         elif chioce == "10":
-            Import_from_CSV()
+            import_from_CSV()
         elif chioce == "11":
             print("Exiting...")
             return
