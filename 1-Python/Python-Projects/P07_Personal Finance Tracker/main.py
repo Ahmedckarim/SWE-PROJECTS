@@ -1,4 +1,16 @@
 from data_entry import get_amount, get_category, get_date , get_description
+class financeTracker:
+
+
+    def to_dic():
+        pass
+    def to_CSV():
+        pass
+
+    def add_entry():
+        pass
+
+
 
 def menu():
     print("\n==============================")
@@ -6,10 +18,10 @@ def menu():
     print("==============================")
 
     print("1. Add transtion")
-    print("5. Monthly Summary")
-    print()
-    print("10. Import from CSV")
-    print("11. Exit")
+    print("2. View summary")
+    print("3. Monthly Summary")
+    print("4. Export to CSV file")
+    print("5. Exit")
 
     print("==============================")
 
